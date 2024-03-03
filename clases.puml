@@ -1,0 +1,39 @@
+@startuml
+
+class Administrador{
+    string NombreUsuario
+    string Contraseña
+}
+
+class Empresa{
+    string Nombre
+    string NombreAsesorComercial
+    string VisitasAsesorComercial
+    string LimiteFacturacion
+}
+class Producto{
+    string Nombre
+    String EspecificacionesTecnicas
+    Int cantidad 
+    Int Precio
+    Int Peso
+}
+class IngresoMercancia{
+    string FechaIngreso
+}
+class Inventario{
+    string Producto
+    string ReferenciaProducto
+    Arraylist listaProductos
+}
+
+Empresa-up-*Producto
+Empresa-down-o Administrador
+Administrador-right-*IngresoMercancia
+Administrador-left-*Inventario
+Administrador-down-o Producto
+
+
+
+
+@enduml
