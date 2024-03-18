@@ -1,0 +1,34 @@
+@startuml
+actor Administrador as administrador
+boundary "Interfaz agregar mercancia al inventario" as feAgregarMercancia
+administrador-right->feAgregarMercancia
+
+control "Fecha de ingreso de la mercancia " as fechaIngreso
+
+control "Ingrese el nombre de la empresa" as nombreEmpresa
+usecase "Informacion de la empresa" as informacionEmpresa
+
+control "Ingrese el nombre del producto" as nombreProducto
+usecase "Informacion del producto" as informacionProducto
+
+control "Ingresar costo del producto" as costoProducto
+
+control "Cantidad producto" as cantidadProducto
+
+feAgregarMercancia-down-> fechaIngreso
+
+feAgregarMercancia-up->nombreEmpresa
+nombreEmpresa-up->informacionEmpresa
+
+feAgregarMercancia-down->nombreProducto
+nombreProducto-down->informacionProducto
+
+feAgregarMercancia-right->costoProducto
+feAgregarMercancia-right->cantidadProducto
+
+boundary "Continuar y guardar" as continuar
+administrador-left-> continuar:Informacion guardada
+
+
+@enduml
+

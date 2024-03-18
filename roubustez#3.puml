@@ -1,0 +1,24 @@
+@startuml
+
+actor Administrador as administrador
+boundary "Interfaz del Stock " as feInformacionStock
+administrador-right-> feInformacionStock
+
+control "Ingresar tip de producto" as ingresarTipoProducto
+
+control "Ingresar referencia del producto" as ingresarReferenciaProducto
+
+control "Cantiddad de producto" as cantidadProducto
+
+feInformacionStock-up-> ingresarTipoProducto
+
+feInformacionStock-down-> ingresarReferenciaProducto
+
+feInformacionStock-right->cantidadProducto
+
+boundary "Observar el inventario deseado" as inventario
+administrador-left-> inventario:Aca se puede observar todo el inventario
+
+
+@enduml
+
