@@ -1,0 +1,47 @@
+
+<html>
+<head>
+    <title>Constru Electricos la 29</title>
+    <style>
+         
+    </style>
+</head>
+<body>
+    <form action="inicio.php" method="post">
+        <h1>Constru Electricos la 29</h1>
+        <p>Ingrese fecha actual</p>
+        <input type="date" name="fechaActual" required><hr>
+
+        <p>Nombre completo de usuario:</p>
+        <input type="text" name="nombre" required><hr>
+
+        <p>Cedula de usuario:</p>
+        <input type="number" name="cedula"><hr>
+
+       <p>Contraseña usuario</p>
+        <input type="password"  name="contraseña"><hr>
+
+        <label>Tipo usuario:</label>
+        <label>
+            <input type="radio" name="principal" > Usuario principal
+        </label>
+        <label>
+            <input type="radio" name="otro"  > Otro
+        </label>
+        <hr>
+       
+        <label for="tipoAccion">Tipo de Accion:</label>
+        <select id="tipoAccion" name="tipo_Accion" required>
+            <option value="">Seleccionar tipo de Accion</option>
+            <option value="Ingresar ">Ingresar Informacion</option>
+            <option value="Sacar">Sacar Informacion</option>
+        </select>
+        <hr>
+
+
+        <img src="descarga.jpg"  width= "10%" alt = "Trabaja con nosotros" ><hr>
+
+        <button type="submit">Continuar</button>
+    </form>
+</body>
+</html>
