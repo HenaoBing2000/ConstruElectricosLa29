@@ -1,0 +1,22 @@
+@startuml
+actor Administrador as administrador
+usecase (Ingresar Datos de usuario)as ingresarDatos
+administrador-down->ingresarDatos
+
+Usecase (Agregar Productos)as productos
+administrador-right-> productos
+productos-up->(Fecha Ingreso)
+
+usecase (Nombre de la empresa)as empresa
+administrador-left->empresa
+empresa-left->(Información de la empresa)
+
+usecase (Nombre del producto)as producto
+administrador-up->producto
+producto-up->(Información del producto)
+
+usecase (Información de stock)as Stock
+administrador-down->(Inventario real)
+
+
+@enduml

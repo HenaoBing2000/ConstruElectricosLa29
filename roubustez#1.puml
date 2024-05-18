@@ -1,0 +1,17 @@
+@startuml
+actor Administrador as administrador
+boundary "Interfaz datos usuario" as feIngresarDatos 
+administrador-right->feIngresarDatos
+
+control "Ingrese Usuario" as ingresarUsuario
+control "Ingrese Contraseña de usuario " as ingresarContraseñaUsuario
+control "Validar/Ingresar" as ingresarValidarDatos
+
+feIngresarDatos-down->ingresarUsuario
+feIngresarDatos-up->ingresarContraseñaUsuario
+ingresarUsuario-right->ingresarValidarDatos
+ingresarContraseñaUsuario-left-> ingresarValidarDatos
+boundary "Error de datos " as errorDeDatos
+ingresarValidarDatos-up-> errorDeDatos:Datos no validos
+
+@enduml
